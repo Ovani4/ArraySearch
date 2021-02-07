@@ -19,8 +19,6 @@ public class ArraySearch {
         ArraySearch as = new ArraySearch();
         int [] array = {15,2,5,8,9,7,17};
         int [] array1 = {15,2,7,15,9,7,17};
-        System.out.println(as.IsUnic(array));
-        System.out.println(as.IsUnic(array1));
-        System.out.println(as.IsUnic(array));
+
     }
 }

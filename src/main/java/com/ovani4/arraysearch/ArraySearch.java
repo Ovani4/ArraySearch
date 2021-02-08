@@ -20,7 +20,7 @@ public class ArraySearch {
 
     private void SearchSum(int[] array){
         Set<Integer> set = new TreeSet<>();
-        List<Integer> list = new ArrayList<Integer>();
+        List<Integer> list = new ArrayList<>();
         for (int i : array) {
             list.add(i);
         }
@@ -44,10 +44,33 @@ public class ArraySearch {
         }
     }
 
+    private void SearchDouble(int[] array) {
+        Map<Integer, Integer> map = new TreeMap<>();
+        for (int i = 0; i < array.length; i++) {
+            map.put(i, array[i]);
+        }
+        for (Map.Entry entry1 : map.entrySet()) {
+            int iter = 0;
+            for (Map.Entry entry : map.entrySet()) {
+                if (entry1.getValue().equals(entry.getValue())){
+                    iter++;
+                    if (iter > 1){
+                        System.out.println("Чсло " + " " + entry.getValue() + " повторяется " +
+                                iter + " раз");
+                        iter = 0;
+                    }
+                }
+            }
+        }
+    }
+
+
+
     public static void main(String[] args) {
         ArraySearch as = new ArraySearch();
         int [] array = {15,2,5,8,9,7,17};
         int [] array1 = {15,2,7,15,9,7,17};
         as.SearchSum(array);
+        as.SearchDouble(array1);
     }
 }

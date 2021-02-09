@@ -38,22 +38,23 @@ public class ArraySearch {
 
     private void SearchDouble(int[] array) {
         Map<Integer, Integer> map = new TreeMap<>();
-        for (int i = 0; i < array.length; i++) {
-            map.put(i, array[i]);
-        }
         boolean res = false;
-        for (Map.Entry entry1 : map.entrySet()) {
+        for (int i = 0; i < array.length; i++) {
             int iter = 0;
+            map.put(i, array[i]);
             for (Map.Entry entry : map.entrySet()) {
-                if (entry1.getValue().equals(entry.getValue())) {
+                if (entry.getValue().equals(array[i])){
                     iter++;
                 }
-            }
-            if (iter > 1) {
+            }if (iter > 1){
                 res = true;
+                System.out.println(res);
+                break;
             }
         }
-        System.out.println(res);
+        if (!res){
+            System.out.println(res);
+        }
     }
 
 

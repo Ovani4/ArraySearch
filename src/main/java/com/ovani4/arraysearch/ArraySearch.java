@@ -18,6 +18,7 @@ public class ArraySearch {
             if (!set.add(i)) {
                 System.out.println("Значение " + i + " не уникально");
                 isTrue = false;
+                break;
             } else set.add(i);
         }
         int x = list.size();

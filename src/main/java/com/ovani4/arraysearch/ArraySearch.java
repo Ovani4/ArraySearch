@@ -31,7 +31,7 @@ public class ArraySearch {
                 }
             }
         }
-        }
+    }
 
 
 
@@ -40,9 +40,9 @@ public class ArraySearch {
         int [] array = {15,2,5,8,9,7,17};
         int [] array1 = {15,2,7,15,9,7,17};
 
-        as.SearchSum(array);
+
         as.SearchSum(array1);
         as.SearchDouble(array);
-        as.SearchDouble(array1);
+
     }
 }

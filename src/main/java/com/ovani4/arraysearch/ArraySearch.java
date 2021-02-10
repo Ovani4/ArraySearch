@@ -5,7 +5,7 @@ import java.util.*;
 public class ArraySearch {
 
     private void SearchSum(int[] array)  {
-    Set<Integer> set = new TreeSet();
+    Set<Integer> set = new TreeSet<>();
     boolean bo = false;
         for (int i : array) {
             if (!set.add(i)){
@@ -18,25 +18,20 @@ public class ArraySearch {
     }
 
     private void SearchDouble(int[] array) {
-        Map<Integer, Integer> map = new TreeMap<>();
-        boolean res = false;
-        for (int i = 0; i < array.length; i++) {
-            int iter = 0;
-            map.put(i, array[i]);
-            for (Map.Entry entry : map.entrySet()) {
-                if (entry.getValue().equals(array[i])){
-                    iter++;
+        Map<Integer,Integer> map = new TreeMap<>();
+             for (int i = 0; i<array.length;i++) {
+                 map.put(i, array[i]);
+             }
+             int x = array[array.length-1];
+        for (Map.Entry entry : map.entrySet()) {
+            for (Map.Entry entry1 : map.entrySet()) {
+                if (entry1.getValue().equals(x - (int) entry.getValue())
+                && (int)entry.getKey() < (int)entry1.getKey()){
+                    System.out.println(entry.getKey() + " " + entry1.getKey());
                 }
-            }if (iter > 1){
-                res = true;
-                System.out.println(res);
-                break;
             }
         }
-        if (!res){
-            System.out.println(res);
         }
-    }
 
 
 
@@ -47,7 +42,7 @@ public class ArraySearch {
 
         as.SearchSum(array);
         as.SearchSum(array1);
-        //as.SearchDouble(array1);
-        //as.SearchDouble(array);
+        as.SearchDouble(array);
+        as.SearchDouble(array1);
     }
 }

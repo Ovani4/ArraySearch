@@ -14,14 +14,12 @@ public class ArraySearch {
     }
     private void SearchSum(int[] array, int x) {
         Map<Integer,Integer> map = new TreeMap<>();
-             for (int i = 0; i<array.length;i++) {
-                 map.put(i, array[i]);
-             }
-        for (Map.Entry entry : map.entrySet()) {
-            for (Map.Entry entry1 : map.entrySet()) {
-                if (entry1.getValue().equals(x - (int) entry.getValue())
-                && (int)entry.getKey() < (int)entry1.getKey()){
-                    System.out.println(entry.getKey() + " " + entry1.getKey());
+        for (int i = 0; i<array.length;i++) {
+            map.put(i, array[i]);
+            int y = x - array[i];
+            for (Map.Entry entry : map.entrySet()) {
+                if (entry.getValue().equals(y)){
+                         System.out.println(i + " " + entry.getKey());
                 }
             }
         }
@@ -35,8 +33,7 @@ public class ArraySearch {
         int [] array1 = {15,2,7,15,9,7,17};
 
 
-        as.SearchSum(array1, array[array.length-1]);
-        as.SearchDuplicates(array);
-
+        as.SearchSum(array, array[array.length-1]);
+        System.out.println(as.SearchDuplicates(array1));
     }
 }

@@ -5,35 +5,16 @@ import java.util.*;
 public class ArraySearch {
 
     private void SearchSum(int[] array)  {
-
-        Set<Integer> set = new TreeSet<>();
-        List<Integer> list = new ArrayList<>();
-
+    Set<Integer> set = new TreeSet();
+    boolean bo = false;
         for (int i : array) {
-            list.add(i);
-        }
-        //Добавление массива в Set
-        boolean isTrue = true;
-        for (int i : array) {
-            if (!set.add(i)) {
-                System.out.println("Значение " + i + " не уникально");
-                isTrue = false;
+            if (!set.add(i)){
+                bo = true;
+                System.out.println(bo);
                 break;
-            } else set.add(i);
-        }
-        int x = list.size();
-        int y = array[x-1];
-        //Поиск значений
-        if (isTrue)
-        for (int i : set) {
-            int q = y - i;
-            for (int j : set) {
-                if (j == q && list.indexOf(i) < list.indexOf(j)){
-                        System.out.println(list.indexOf(i) + " "
-                                + list.indexOf(j));
-                }
             }
-        }
+        }if (!bo)
+        System.out.println(bo);
     }
 
     private void SearchDouble(int[] array) {
@@ -66,7 +47,7 @@ public class ArraySearch {
 
         as.SearchSum(array);
         as.SearchSum(array1);
-        as.SearchDouble(array1);
-        as.SearchDouble(array);
+        //as.SearchDouble(array1);
+        //as.SearchDouble(array);
     }
 }
